@@ -1,0 +1,833 @@
+Placeholders:
+  '%red%': '#fd5e5e'
+  '%gray%': '#d4d9d8'
+  '%green%': '#aefd5e'
+Command:
+  Currency:
+    Desc: Currency manager.
+    Usage: '[help]'
+    Give:
+      Desc: Give specified currency to a player.
+      Usage: <currency> <player> <amount>
+      Done: Given &ax%amount% %currency_name%&7 to &a%player_name%&7.
+    Take:
+      Desc: Take specified currency from a player.
+      Usage: <currency> <player> <amount>
+      Done: Took &ax%amount% %currency_name%&7 from &a%player_name%&7.
+    Create:
+      Desc: Create/replace a currency from/with the item in hand.
+      Usage: <name>
+      Done:
+        New: Created a new currency &a%currency_id%&7 as &a%item%&7.
+        Replace: Replaced item in the currency &a%currency_id%&7 with &a%item%&7.
+      Error:
+        Exist: Currency &c%currency_id%&7 is already exist and is not an Item Currency.
+    Error:
+      NoItem: '#fd5e5eYou must hold an item to do that!'
+Module:
+  Command:
+    Reload: '#aefd5e%name%#d4d9d8 reloaded!'
+Error:
+  Currency:
+    Invalid: '#fd5e5e Invalid  valuta!'
+Shop:
+  Product:
+    Error:
+      Unbuyable: '<! sound:"ENTITY_VILLAGER_NO" !>#fd5e5e&lSorry! #d4d9d8This product
+        can''t be purchased at the moment!'
+      Unsellable: '<! sound:"ENTITY_VILLAGER_NO" !>#fd5e5e&lSorry! #d4d9d8This product
+        can''t be sold at the moment!'
+      OutOfStock: '<! sound:"ENTITY_VILLAGER_NO" !>#fd5e5e&lSorry! #d4d9d8This product
+        is out of stock!'
+      OutOfSpace: '<! sound:"ENTITY_VILLAGER_NO" !>#fd5e5e&lSorry! #d4d9d8The shop
+        is out of space!'
+      OutOfFunds: '<! sound:"ENTITY_VILLAGER_NO" !>#fd5e5e&lSorry! #d4d9d8The shop
+        is out of money!'
+      FullStock: '<! sound:"ENTITY_VILLAGER_NO" !>#fd5e5e&lSorry! #d4d9d8This product
+        is full of stock!'
+      FullInventory: '<! sound:"ENTITY_VILLAGER_NO" !>#fd5e5e&lSorry! #d4d9d8You have
+        to clean up your inventory before purchase!'
+      TooExpensive:
+      - <! type:"titles:15:60:15" sound:"BLOCK_ANVIL_PLACE" !>
+      - '#fd5e5e&lToo Expensive! '
+      - '#d4d9d8You need: #fd5e5e%price%#d4d9d8!'
+      NotEnoughItems:
+      - <! type:"titles:15:60:15" sound:"BLOCK_ANVIL_PLACE" !>
+      - '#fd5e5e&lNot Enough Items! '
+      - '#d4d9d8You need: #fd5e5ex%amount% %item%#d4d9d8!'
+  Cart:
+    EnterAmount:
+    - <! type:"titles:20:1200:20" !>
+    - '#aefd5e&l< Custom Amount >'
+    - '#d4d9d8Enter your amount'
+Editor:
+  Generic:
+    Enter:
+      Name: '#d4d9d8Enter #aefd5e[Name]'
+      Amount: '#d4d9d8Enter #aefd5e[Amount]'
+      Day: '#d4d9d8Enter #aefd5e[English Day Name]'
+      Time: '#d4d9d8Enter #aefd5e[Hours:Minutes:Seconds]'
+      Seconds: '#d4d9d8Enter #aefd5e[Seconds Amount]'
+  Product:
+    Enter:
+      Price: '#d4d9d8Enter #aefd5e[Price]'
+      UniPrice: '#d4d9d8Enter #aefd5e[Min] [Max]'
+      Currency: '#d4d9d8Enter #aefd5e[Currency Identifier]'
+TradeType:
+  BUY: köpa
+  SELL: Sälja
+PriceType:
+  FLAT: Platt
+  FLOAT: Flyta
+  DYNAMIC: Dynamisk
+VirtualShop:
+  Command:
+    Editor:
+      Desc: Open VirtualShop editor.
+    Open:
+      Desc: Opens specified shop.
+      Usage: '[player]'
+    Menu:
+      Desc: Opens Main Menu.
+      Usage: '[player]'
+    Shop:
+      Desc: Open specified shop or main menu.
+      Usage: '[shopId]'
+    SellMenu:
+      Desc: Open Sell GUI.
+      Usage: ''
+    SellAll:
+      Desc: Quickly sell all items in inventory.
+      Usage: ''
+    SellHand:
+      Desc: Quickly sell hand item.
+      Usage: ''
+  Shop:
+    Error:
+      BadWorld: '#fd5e5e You  kan inte  använda sig av  affär  i  detta  värld!'
+      BadGamemode: '#fd5e5e You  kan inte  använda sig av  affär  i  nuvarande  spelläge!'
+      Invalid: '#fd5e5e No  sådan  affär!'
+  Product:
+    Purchase:
+      Sell:
+      - <! type:"titles:15:60:15" sound:"ENTITY_EXPERIENCE_ORB_PICKUP" !>
+      - '#aefd5e&lSuccessful Sale! '
+      - '#d4d9d8You sold #aefd5ex%amount% %item%#d4d9d8 for #aefd5e%price%'
+      Buy:
+      - <! type:"titles:15:60:15" sound:"ENTITY_EXPERIENCE_ORB_PICKUP" !>
+      - '#aefd5e&lSuccessful Purchase!'
+      - ' #d4d9d8You bought #aefd5ex%amount% %item%#d4d9d8 for #aefd5e%price%'
+  SellMenu:
+    SaleResult:
+    - <! prefix:"false" type:"titles:20:80:20" sound:"ENTITY_EXPERIENCE_ORB_PICKUP"
+      !>
+    - '#aefd5e&lItems Sold!'
+    - '#d4d9d8+%total%'
+  Editor:
+    Create:
+      Error:
+        Exist: '#fd5e5e Shop  med  sådan  ID  redan  existera!'
+    Enter:
+      Id: '#d4d9d8Enter #aefd5e[Shop Identifier]'
+      Description: '#d4d9d8Enter #aefd5e[Description]'
+      NpcId: '#d4d9d8Enter #aefd5e[NPC ID]'
+      Title: '#d4d9d8Enter #aefd5e[Title]'
+      Command: '#d4d9d8Enter #aefd5e[Command]'
+      Chance: '#d4d9d8Enter #aefd5e[Chance]'
+      Slots: '#d4d9d8Enter #aefd5e[Slots] -> [1,2,5,etc]'
+      Rank: '#d4d9d8Enter #aefd5e[Rank Name]'
+      Permission: '#d4d9d8Enter #aefd5e[Permission Node]'
+    Shop:
+      Create:
+        Name: ' affär'
+        Lore:
+        - ''
+        - '#aaa8a8(#e8f2f2Left-Click#aaa8a8 to create static shop)'
+        - '#aaa8a8(#e8f2f2Right-Click#aaa8a8 to create rotating shop)'
+      Object:
+        Name: ''
+        Lore:
+        - '#ead931&lCurrent:'
+        - '#ead931▪ #aaa8a8Type: #ead931%shop_type%'
+        - '#ead931▪ #aaa8a8Pages: #ead931%shop_pages%'
+        - ''
+        - '#aaa8a8(#e8f2f2Left-Click#aaa8a8 to edit)'
+        - '#aaa8a8(#e8f2f2Shift-Right#aaa8a8 to delete#ea3131 (no undo)'
+      DisplayName:
+        Name: ' namn'
+        Lore:
+        - '#aaa8a8General shop name, which'
+        - '#aaa8a8is #ea3131not#aaa8a8 related to GUI title.'
+        - ''
+        - '#ead931&lCurrent:'
+        - '#ead931▪ #aaa8a8Name: #ead931%shop_name%#aaa8a8 (#e8f2f2Left-Click#aaa8a8)'
+      Description:
+        Name: ''
+        Lore:
+        - '#aaa8a8Describe what items this shop trades.'
+        - ''
+        - '#ead931&lCurrent:'
+        - '#aaa8a8%shop_description%'
+        - ''
+        - '#aaa8a8(#e8f2f2Left-Click#aaa8a8 to add line)'
+        - '#aaa8a8(#e8f2f2Right-Click#aaa8a8 to remove all)'
+      Pages:
+        Name: ' Belopp'
+        Lore:
+        - '#aaa8a8Amount of pages in the shop.'
+        - ''
+        - '#aaa8a8#ea9631[!]#aaa8a8 Make sure to add #ea9631page buttons'
+        - '#aaa8a8in #ea9631View Editor#aaa8a8!'
+        - ''
+        - '#ead931&lCurrent:'
+        - '#ead931▪ #aaa8a8Pages: #ead931%shop_pages%#aaa8a8 (#e8f2f2LMB +1#aaa8a8
+          | #e8f2f2RMB -1#aaa8a8)'
+      Icon:
+        Name: ''
+        Lore:
+        - '#aaa8a8Item used to display shop'
+        - '#aaa8a8in various GUIs.'
+        - ''
+        - '#aaa8a8(#e8f2f2Drag & Drop#aaa8a8 to replace)'
+        - '#aaa8a8(#e8f2f2Right-Click#aaa8a8 to get a copy)'
+      PermissionRequirement:
+        Name: ' Krav'
+        Lore:
+        - '#aaa8a8Sets whether or not permission'
+        - '#aaa8a8is required to use this shop.'
+        - ''
+        - '#ead931&lCurrent:'
+        - '#ead931▪ #aaa8a8Enabled: #ead931%shop_permission_required%#aaa8a8 (#e8f2f2Left-Click#aaa8a8)'
+        - '#ead931▪ #aaa8a8Node: #ead931%shop_permission_node%'
+      Transactions:
+        Name: ''
+        Lore:
+        - '#aaa8a8Global rules allowing / disallowing'
+        - '#aaa8a8selling and buying in this shop.'
+        - ''
+        - '#ead931&lCurrent:'
+        - '#ead931▪ #aaa8a8Buying Enabled: #ead931%shop_buy_allowed%#aaa8a8 (#e8f2f2Left-Click#aaa8a8)'
+        - '#ead931▪ #aaa8a8Selling Enabled: #ead931%shop_sell_allowed%#aaa8a8 (#e8f2f2Right-Click#aaa8a8)'
+      AttachedNPCs:
+        Name: ' NPC:er'
+        Lore:
+        - '#aaa8a8List of NPCs (id) attached to this shop'
+        - '#aaa8a8to open it on interaction.'
+        - '#aaa8a8#ea3131(Citizens plugin required)'
+        - ''
+        - '#ead931&lCurrent:'
+        - '#aaa8a8%shop_npc_ids%'
+        - ''
+        - '#aaa8a8(#e8f2f2Left-Click#aaa8a8 to add)'
+        - '#aaa8a8(#e8f2f2Right-Click#aaa8a8 to remove all)'
+      ViewEditor:
+        Name: ' Redaktör'
+        Lore:
+        - '#aaa8a8Here you can customize and decorate'
+        - '#aaa8a8GUI layout for this shop.'
+        - ''
+        - '#ead931&lCurrent:'
+        - '#ead931▪ #aaa8a8Layout: #ead931#e8f2f2Left-Click'
+        - '#ead931▪ #aaa8a8Title: #ead931%shop_view_title%#aaa8a8 (#e8f2f2Shift-Left#aaa8a8)'
+        - '#ead931▪ #aaa8a8Size: #ead931%shop_view_size%#aaa8a8 (#e8f2f2Shift-Right#aaa8a8)'
+      Discounts:
+        Name: ''
+        Lore:
+        - '#aaa8a8Create and manage shop discounts here!'
+      Products:
+        Name: ''
+        Lore:
+        - '#aaa8a8Create and manage products here.'
+        - ''
+        - '#aaa8a8(#e8f2f2Left-Click#aaa8a8 to navigate)'
+        - '#aaa8a8(#e8f2f2[Q] Drop Key#aaa8a8 to reset & update all prices)'
+        - '#aaa8a8(#e8f2f2[F] Swap Key#aaa8a8 to reset all stocks & limits)'
+      Rotation:
+        Type:
+          Name: ' Typ'
+          Lore:
+          - '#aaa8a8#ead931INTERVAL#aaa8a8 = Every X minutes.'
+          - '#aaa8a8#ead931FIXED#aaa8a8 = Strictly at specified times.'
+          - ''
+          - '#ead931&lCurrent:'
+          - '#ead931▪ #aaa8a8Type: #ead931%shop_rotation_type%#aaa8a8 (#e8f2f2Left-Click#aaa8a8)'
+        Interval:
+          Name: ' Intervall'
+          Lore:
+          - '#aaa8a8Sets how often (in seconds) shop'
+          - '#aaa8a8products will be rotated.'
+          - ''
+          - '#ead931&lCurrent:'
+          - '#ead931▪ #aaa8a8Interval: #ead931%shop_rotation_interval%#aaa8a8 (#e8f2f2Left-Click#aaa8a8)'
+          - ''
+          - '#aaa8a8(#e8f2f2[Q] Drop Key#aaa8a8 to force rotate)'
+        Times:
+          Name: ' Tider'
+          Lore:
+          - '#aaa8a8Here you can define rotation'
+          - '#aaa8a8times for each day of week.'
+          - ''
+          - '#aaa8a8(#e8f2f2Left-Click#aaa8a8 to navigate)'
+        Products:
+          Name: ' Produkter'
+          Lore:
+          - '#aaa8a8Sets how many products'
+          - '#aaa8a8will be used in rotations and'
+          - '#aaa8a8slots where they will appear.'
+          - ''
+          - '#ead931&lCurrent:'
+          - '#ead931▪ #aaa8a8Min: #ead931%shop_rotation_min_products%#aaa8a8 (#e8f2f2Left-Click#aaa8a8)'
+          - '#ead931▪ #aaa8a8Max: #ead931%shop_rotation_max_products%#aaa8a8 (#e8f2f2Right-Click#aaa8a8)'
+          - '#ead931▪ #aaa8a8Slots: #ead931%shop_rotation_product_slots%#aaa8a8 (#e8f2f2[Q]
+            Drop Key#aaa8a8)'
+    Product:
+      Object:
+        Static:
+          Name: ''
+          Lore:
+          - '#aaa8a8You can freely move this product'
+          - '#aaa8a8between slots, pages, and shops!'
+          - ''
+          - '#aaa8a8#ead931&lInfo:'
+          - '#ead931▪ #aaa8a8Handler: #ead931%product_handler%'
+          - '#ead931▪ #aaa8a8Currency: #ead931%product_currency%'
+          - '#ead931▪ #aaa8a8Buy: #ead931%product_price_buy%'
+          - '#ead931▪ #aaa8a8Sell: #ead931%product_price_sell%'
+          - ''
+          - '#aaa8a8(#e8f2f2Shift-Left#aaa8a8 to edit)'
+          - '#aaa8a8(#e8f2f2Shift-Right#aaa8a8 to delete#ea3131 (no undo)'
+        Rotating:
+          Name: ''
+          Lore:
+          - '#ead931&lCurrent:'
+          - '#ead931▪ #aaa8a8Rotation Chance: #ead931%product_rotation_chance%%'
+          - '#ead931▪ #aaa8a8Currency: #ead931%product_currency%'
+          - '#ead931▪ #aaa8a8Buy Price: #ead931%product_price_buy%'
+          - '#ead931▪ #aaa8a8Sell Price: #ead931%product_price_sell%'
+          - ''
+          - '#aaa8a8(#e8f2f2Shift-Left#aaa8a8 to edit)'
+          - '#aaa8a8(#e8f2f2Shift-Right#aaa8a8 to delete#ea3131 (no undo)'
+      FreeSlot:
+        Name: ' Spår'
+        Lore:
+        - '#aaa8a8Drop item from cursor to'
+        - '#aaa8a8create #74ea31item#aaa8a8 product.'
+        - ''
+        - '#aaa8a8Click with empty cursor to'
+        - '#aaa8a8create #74ea31command#aaa8a8 product.'
+      ReservedSlot:
+        Name: ' Spår'
+        Lore:
+        - '#aaa8a8This slot is occupied by a shop product.'
+      PriceManager:
+        Name: ' Chef'
+        Lore:
+        - '#aaa8a8Sets product currency and price.'
+        - ''
+        - '#ead931&lCurrent:'
+        - '#ead931▪ #aaa8a8Type: #ead931%product_price_type%'
+        - '#ead931▪ #aaa8a8Currency: #ead931%product_currency%#aaa8a8 (#e8f2f2Right-Click#aaa8a8)'
+        - '#ead931▪ #aaa8a8Buy: #ead931%product_price_buy%'
+        - '#ead931▪ #aaa8a8Sell: #ead931%product_price_sell%'
+        - ''
+        - '#aaa8a8(#e8f2f2Left-Click#aaa8a8 to change settings)'
+        - '#aaa8a8(#e8f2f2[Q] Drop Key#aaa8a8 to refresh prices)'
+      Rotation:
+        Chance:
+          Name: ' Chans'
+          Lore:
+          - '#aaa8a8A chance that this product'
+          - '#aaa8a8will appear in next shop rotation.'
+          - ''
+          - '#ead931&lCurrent:'
+          - '#ead931▪ #aaa8a8Chance: #ead931%product_rotation_chance%%#aaa8a8 (#e8f2f2Left-Click#aaa8a8)'
+        DayTimes:
+          Name: ''
+          Lore:
+          - '#aaa8a8%time%'
+          - ''
+          - '#aaa8a8(#e8f2f2Left-Click#aaa8a8 to add)'
+          - '#aaa8a8(#e8f2f2Right-Click#aaa8a8 to remove all)'
+      Item:
+        Name: ' Artikel'
+        Lore:
+        - '#aaa8a8This item will be #74ea31given#aaa8a8 to players'
+        - '#aaa8a8on buying and #ea3131taken#aaa8a8 on selling.'
+        - ''
+        - '#aaa8a8(#e8f2f2Drag & Drop#aaa8a8 to replace)'
+        - '#aaa8a8(#e8f2f2Right-Click#aaa8a8 to get copy)'
+      RespectItemMeta:
+        Name: ' Artikel  Meta'
+        Lore:
+        - '#aaa8a8When #74ea31enabled#aaa8a8, players can sell only'
+        - '#aaa8a8exact items comparing to #e8f2f2Actual Item#aaa8a8.'
+        - ''
+        - '#aaa8a8When #ea3131disabled#aaa8a8, players can sell any'
+        - '#aaa8a8item of the same type as #e8f2f2Actual Item#aaa8a8.'
+        - ''
+        - '#ead931&lCurrent:'
+        - '#ead931▪ #aaa8a8Enabled: #ead931%product_item_meta_enabled%#aaa8a8 (#e8f2f2Left-Click#aaa8a8)'
+      Preview:
+        Name: ' Artikel'
+        Lore:
+        - '#aaa8a8This item will be #ead931displayed#aaa8a8 in shop GUIs'
+        - '#aaa8a8instead of the #e8f2f2Actual Item#aaa8a8.'
+        - ''
+        - '#aaa8a8(#e8f2f2Drag & Drop#aaa8a8 to replace)'
+        - '#aaa8a8(#e8f2f2Right-Click#aaa8a8 to get copy)'
+      Commands:
+        Name: ''
+        Lore:
+        - '#aaa8a8All commands listed below will'
+        - '#aaa8a8be runned from #e8f2f2console'
+        - '#aaa8a8when player purchases this product.'
+        - ''
+        - '#ead931&lCurrent:'
+        - '#aaa8a8%product_commands%'
+        - ''
+        - '#aaa8a8#ead931&lPlaceholders:'
+        - '#ead931▪ #aaa8a8%player_name%: #ead931Player (buyer) name.'
+        - '#ead931▪ #aaa8a8PlaceholderAPI: #ead931All of them.'
+        - ''
+        - '#aaa8a8(#e8f2f2Left-Click#aaa8a8 to add command)'
+        - '#aaa8a8(#e8f2f2Right-Click#aaa8a8 to remove all)'
+      Ranks_Permissions:
+        Name: '  Behörigheter'
+        Lore:
+        - '#aaa8a8Here you configure:'
+        - '#aaa8a8- List of ranks (permission groups) which'
+        - '#aaa8a8    can access this product.'
+        - '#aaa8a8- List of permissions required'
+        - '#aaa8a8    to access this product.'
+        - '#aaa8a8(leave list(s) empty to disable)'
+        - ''
+        - '#aaa8a8#ead931&lAllowed Ranks:'
+        - '#aaa8a8%product_allowed_ranks%'
+        - ''
+        - '#aaa8a8#ead931&lRequired Permissions:'
+        - '#aaa8a8%product_required_permissions%'
+        - ''
+        - '#aaa8a8(#e8f2f2Left-Click#aaa8a8 to add rank)'
+        - '#aaa8a8(#e8f2f2Right-Click#aaa8a8 to remove ranks)'
+        - '#aaa8a8(#e8f2f2Shift-Left#aaa8a8 to add permission)'
+        - '#aaa8a8(#e8f2f2Shift-Right#aaa8a8 to remove permissions)'
+      DiscountAllowed:
+        Name: ' Tillåten'
+        Lore:
+        - '#aaa8a8Sets whether or not this product'
+        - '#aaa8a8can be affected by shop''s discounts.'
+        - ''
+        - '#ead931&lCurrent:'
+        - '#ead931▪ #aaa8a8Enabled: #ead931%product_discount_allowed%#aaa8a8 (#e8f2f2Left-Click#aaa8a8)'
+      Stock:
+        Global:
+          Name: ' Stock'
+          Lore:
+          - '#aaa8a8Sets how many of the product will be available'
+          - '#aaa8a8for #e8f2f2all#aaa8a8 players at the same time.'
+          - '#aaa8a8(amount changed on each transaction)'
+          - ''
+          - '#aaa8a8Set initial to #e8f2f2-1#aaa8a8 for unlimited.'
+          - '#aaa8a8Set restock to #e8f2f2-1#aaa8a8 to disable.'
+          - ''
+          - '#ead931&lCurrent:'
+          - '#ead931▪ #aaa8a8Buy Initial: #ead931%product_stock_global_buy_amount_initial%#aaa8a8
+            (#e8f2f2Left-Click#aaa8a8)'
+          - '#ead931▪ #aaa8a8Buy Restock: #ead931%product_stock_global_buy_restock_time%#aaa8a8
+            (#e8f2f2Right-Click#aaa8a8)'
+          - '#ead931▪ #aaa8a8Sell Initial: #ead931%product_stock_global_sell_amount_initial%#aaa8a8
+            (#e8f2f2Shift-Left#aaa8a8)'
+          - '#ead931▪ #aaa8a8Sell Restock: #ead931%product_stock_global_sell_restock_time%#aaa8a8
+            (#e8f2f2Shift-Right#aaa8a8)'
+          - ''
+          - '#aaa8a8(#e8f2f2[Q] Drop Key#aaa8a8 to disable all)'
+        Player:
+          Name: ' Gränser'
+          Lore:
+          - '#aaa8a8Sets how many of the product will be available'
+          - '#aaa8a8for #e8f2f2each#aaa8a8 player individually.'
+          - '#aaa8a8(amount changed on each transaction)'
+          - ''
+          - '#aaa8a8Set limit to #e8f2f2-1#aaa8a8 for unlimited.'
+          - '#aaa8a8Set restock to #e8f2f2-1#aaa8a8 to disable.'
+          - ''
+          - '#ead931&lCurrent:'
+          - '#ead931▪ #aaa8a8Buy Limit: #ead931%product_stock_player_buy_amount_initial%#aaa8a8
+            (#e8f2f2Left-Click#aaa8a8)'
+          - '#ead931▪ #aaa8a8Buy Restock: #ead931%product_stock_player_buy_restock_time%#aaa8a8
+            (#e8f2f2Right-Click#aaa8a8)'
+          - '#ead931▪ #aaa8a8Sell Limit: #ead931%product_stock_player_sell_amount_initial%#aaa8a8
+            (#e8f2f2Shift-Left#aaa8a8)'
+          - '#ead931▪ #aaa8a8Sell Restock: #ead931%product_stock_player_sell_restock_time%#aaa8a8
+            (#e8f2f2Shift-Right#aaa8a8)'
+          - ''
+          - '#aaa8a8(#e8f2f2[Q] Drop Key#aaa8a8 to disable all)'
+      Price:
+        Type:
+          Name: ' Typ'
+          Lore:
+          - '#aaa8a8Sets product price type.'
+          - '#aaa8a8Different types have different settings.'
+          - ''
+          - '#ead931&lCurrent:'
+          - '#ead931▪ #aaa8a8Current: #ead931%product_price_type%#aaa8a8 (#e8f2f2Left-Click#aaa8a8)'
+        Flat:
+          Buy:
+            Name: ' Pris'
+            Lore:
+            - '#ead931▪ #aaa8a8Current: #ead931%product_price_buy%#aaa8a8 (#e8f2f2Left-Click#aaa8a8)'
+            - ''
+            - '#aaa8a8(#e8f2f2[Q] Drop Key#aaa8a8 to disable)'
+          Sell:
+            Name: ' Pris'
+            Lore:
+            - '#ead931▪ #aaa8a8Current: #ead931%product_price_sell%#aaa8a8 (#e8f2f2Left-Click#aaa8a8)'
+            - ''
+            - '#aaa8a8(#e8f2f2[Q] Drop Key#aaa8a8 to disable)'
+        Float:
+          Buy:
+            Name: ' Pris'
+            Lore:
+            - '#aaa8a8Sets product buy price bounds.'
+            - '#aaa8a8Final price will be within these values.'
+            - ''
+            - '#ead931&lCurrent:'
+            - '#ead931▪ #aaa8a8Min: #ead931%product_pricer_buy_min%#aaa8a8 (#e8f2f2Left-Click#aaa8a8)'
+            - '#ead931▪ #aaa8a8Max: #ead931%product_pricer_buy_max%#aaa8a8 (#e8f2f2Left-Click#aaa8a8)'
+            - ''
+            - '#aaa8a8(#e8f2f2[Q] Drop Key#aaa8a8 to disable)'
+          Sell:
+            Name: ' Pris'
+            Lore:
+            - '#aaa8a8Sets product sell price bounds.'
+            - '#aaa8a8Final price will be within these values.'
+            - ''
+            - '#ead931&lCurrent:'
+            - '#ead931▪ #aaa8a8Min: #ead931%product_pricer_sell_min%#aaa8a8 (#e8f2f2Left-Click#aaa8a8)'
+            - '#ead931▪ #aaa8a8Max: #ead931%product_pricer_sell_max%#aaa8a8 (#e8f2f2Left-Click#aaa8a8)'
+            - ''
+            - '#aaa8a8(#e8f2f2[Q] Drop Key#aaa8a8 to disable)'
+          Refresh:
+            Name: ' inställningar'
+            Lore:
+            - '#aaa8a8Product price will be auto generated'
+            - '#aaa8a8in specified days and times below.'
+            - '#aaa8a8Until that, previously generated price will be used.'
+            - ''
+            - '#ead931&lCurrent:'
+            - '#ead931▪ #aaa8a8Days: #ead931%product_pricer_float_refresh_days%'
+            - '#ead931▪ #aaa8a8Times: #ead931%product_pricer_float_refresh_times%'
+            - ''
+            - '#aaa8a8(#e8f2f2Left-Click#aaa8a8 to add day)'
+            - '#aaa8a8(#e8f2f2Right-Click#aaa8a8 to add time)'
+            - '#aaa8a8(#e8f2f2Shift-Left#aaa8a8 to clear days)'
+            - '#aaa8a8(#e8f2f2Shift-Right#aaa8a8 to clear times)'
+        Dynamic:
+          Buy:
+            Name: ' Pris'
+            Lore:
+            - '#aaa8a8Sets product buy price bounds.'
+            - '#aaa8a8Final price will be within these values.'
+            - ''
+            - '#ead931&lCurrent:'
+            - '#ead931▪ #aaa8a8Min: #ead931%product_pricer_buy_min%#aaa8a8 (#e8f2f2Left-Click#aaa8a8)'
+            - '#ead931▪ #aaa8a8Max: #ead931%product_pricer_buy_max%#aaa8a8 (#e8f2f2Left-Click#aaa8a8)'
+            - ''
+            - '#aaa8a8(#e8f2f2[Q] Drop Key#aaa8a8 to disable)'
+          Sell:
+            Name: ' Pris'
+            Lore:
+            - '#aaa8a8Sets product sell price bounds.'
+            - '#aaa8a8Final price will be within these values.'
+            - ''
+            - '#ead931&lCurrent:'
+            - '#ead931▪ #aaa8a8Min: #ead931%product_pricer_sell_min%#aaa8a8 (#e8f2f2Left-Click#aaa8a8)'
+            - '#ead931▪ #aaa8a8Max: #ead931%product_pricer_sell_max%#aaa8a8 (#e8f2f2Left-Click#aaa8a8)'
+            - ''
+            - '#aaa8a8(#e8f2f2[Q] Drop Key#aaa8a8 to disable)'
+          Initial:
+            Name: ' Pris'
+            Lore:
+            - '#aaa8a8Sets initial product price.'
+            - '#aaa8a8These values will be used as default/start ones.'
+            - ''
+            - '#ead931&lCurrent:'
+            - '#ead931▪ #aaa8a8Buy: #ead931%product_pricer_dynamic_initial_buy%#aaa8a8
+              (#e8f2f2Left-Click#aaa8a8)'
+            - '#ead931▪ #aaa8a8Sell: #ead931%product_pricer_dynamic_initial_sell%#aaa8a8
+              (#e8f2f2Right-Click#aaa8a8)'
+          Step:
+            Name: ' Steg'
+            Lore:
+            - '#aaa8a8Step defines for how much price will'
+            - '#aaa8a8grow up/down on each sale/purchase.'
+            - ''
+            - '#aaa8a8Purchases = Price Up, Sales = Price Down'
+            - ''
+            - '#ead931&lCurrent:'
+            - '#ead931▪ #aaa8a8Buy: #ead931%product_pricer_dynamic_step_buy%#aaa8a8
+              (#e8f2f2Left-Click#aaa8a8)'
+            - '#ead931▪ #aaa8a8Sell: #ead931%product_pricer_dynamic_step_sell%#aaa8a8
+              (#e8f2f2Right-Click#aaa8a8)'
+    Discount:
+      Create:
+        Name: ' Rabatt'
+        Lore: []
+      Object:
+        Name: ''
+        Lore:
+        - '#ead931&lCurrent:'
+        - '#ead931▪ #aaa8a8Amount: #ead931%discount_amount%'
+        - '#ead931▪ #aaa8a8Days: #ead931%discount_days%'
+        - '#ead931▪ #aaa8a8Times: #ead931%discount_times%'
+        - ''
+        - '#74ea31&lActions:'
+        - '#74ea31▪ #aaa8a8Left-Click: #74ea31Edit'
+        - '#74ea31▪ #aaa8a8Shift-Right: #74ea31Delete #ea3131(No Undo)'
+      Amount:
+        Name: ''
+        Lore:
+        - '#aaa8a8Sets the discount amount (in percent).'
+        - ''
+        - '#ead931&lCurrent:'
+        - '#ead931▪ #aaa8a8Amount: #ead931%discount_amount%%'
+        - ''
+        - '#74ea31&lActions:'
+        - '#74ea31▪ #aaa8a8Left-Click: #74ea31Change'
+      Duration:
+        Name: ''
+        Lore:
+        - '#aaa8a8Sets how long (in seconds) this'
+        - '#aaa8a8discount will be active.'
+        - ''
+        - '#ead931&lCurrent:'
+        - '#ead931▪ #aaa8a8Duration: #ead931%discount_duration%'
+        - ''
+        - '#74ea31&lActions:'
+        - '#74ea31▪ #aaa8a8Left-Click: #74ea31Change'
+      Days:
+        Name: ' dagar'
+        Lore:
+        - '#aaa8a8A list of days, when this discount will have effect.'
+        - ''
+        - '#ead931&lCurrent:'
+        - '#ead931▪ #aaa8a8Days: #ead931%discount_days%'
+        - ''
+        - '#ea9631&lNotes:'
+        - '#ea9631▪ #aaa8a8At least one #ea9631day#aaa8a8 and #ea9631time#aaa8a8 are
+          required!'
+        - ''
+        - '#74ea31&lActions:'
+        - '#74ea31▪ #aaa8a8Left-Click: #74ea31Add Day'
+        - '#74ea31▪ #aaa8a8Right-Click: #74ea31Clear List'
+      Times:
+        Name: ' Tider'
+        Lore:
+        - '#aaa8a8A list of times, when this discount will be activated.'
+        - ''
+        - '#ead931&lCurrent:'
+        - '#ead931▪ #aaa8a8Days: #ead931%discount_times%'
+        - ''
+        - '#ea9631&lNotes:'
+        - '#ea9631▪ #aaa8a8At least one #ea9631day#aaa8a8 and #ea9631time#aaa8a8 are
+          required!'
+        - ''
+        - '#74ea31&lActions:'
+        - '#74ea31▪ #aaa8a8Left-Click: #74ea31Add Time'
+        - '#74ea31▪ #aaa8a8Right-Click: #74ea31Clear List'
+ShopType:
+  STATIC: Statisk
+  ROTATING: Roterande
+  PLAYER: Spelare
+  ADMIN: Administration
+ChestShop:
+  Command:
+    List:
+      Desc: List of [player's] shops.
+      Usage: '[player]'
+    Bank:
+      Desc: Open [player's] bank.
+      Usage: '[player]'
+    Create:
+      Desc: Creates shop of the chest that you're looking on.
+      Usage: '[type]'
+    Browse:
+      Desc: Player shops GUI.
+      Usage: ''
+    Remove:
+      Desc: Removes the shop from the chest that you're looking at.
+    Open:
+      Desc: Open inventory of the target shop.
+  Shop:
+    Error:
+      NotOwner: '#fd5e5e You  gör det inte  egen  detta  affär!'
+    Creation:
+      Info:
+        Done:
+        - <! type:"titles:10:80:10" sound:"BLOCK_NOTE_BLOCK_BELL" !>
+        - '#aefd5e&lShop Created!'
+        - '#aefd5eRight-Click#d4d9d8 while sneaking to open settings.'
+      Error:
+        AlreadyShop: '#fd5e5e Detta  bröst  är  redan  affär!'
+        NotEmpty: '#fd5e5e  Snälla  avlägsna  Allt  föremål  från  de  bröst  först.'
+        NotAChest: '#fd5e5e Detta  blockera  är  inte  a  bröst!'
+        BadLocation: '#fd5e5e You  kan inte  skapa  affär  här!'
+        LimitReached: '#fd5e5e You  ha  nådde  de  begränsa  av  butiker!  Du  kan
+          inte  skapa  Mer.'
+        BadArea: '#fd5e5e You  burk  skapa  butiker  endast  inuti  din  egen  krav!'
+        NotEnoughFunds: '#fd5e5e You  gör det inte  ha  tillräckligt  medel!'
+        TypePermission: '#fd5e5e You  gör det inte  ha  lov  till  skapa  detta  typ  butiker!'
+    Removal:
+      Info:
+        Done:
+        - <! type:"titles:10:60:10" sound:"ENTITY_GENERIC_EXPLODE" !>
+        - '#fd5e5e&lShop Removed!'
+        - '#d4d9d8'
+      Error:
+        NotAShop: '#fd5e5e Detta  blockera  är  inte  a  affär!'
+    Trade:
+      Buy:
+        Info:
+          User: '<! prefix:"false" !>#ffeea2You bought #fdba5ex%amount% %item%#ffeea2
+            for #fdba5e%price%#ffeea2 from #fdba5e%shop_name%#ffeea2 shop.'
+          Owner: '<! prefix:"false" !>#fdba5e%player_display_name%#ffeea2 bought #fdba5ex%amount%
+            %item%#ffeea2 for #fdba5e%price%#ffeea2 from your #fdba5e%shop_name%#ffeea2
+            shop.'
+      Sell:
+        Info:
+          User: '<! prefix:"false" !>#ffeea2You sold #fdba5ex%amount% %item%#ffeea2
+            for #fdba5e%price%#ffeea2 to #fdba5e%shop_name%#ffeea2 shop.'
+          Owner: '<! prefix:"false" !>#fdba5e%player_display_name%#ffeea2 sold #fdba5ex%amount%
+            %item%#ffeea2 for #fdba5e%price%#ffeea2 to your #fdba5e%shop_name%#ffeea2
+            shop.'
+    Bank:
+      Error:
+        InvalidCurrency:
+        - <! type:"titles:10:80:10" !>
+        - '#fd5e5e&lOperation Failed!'
+        - '#d4d9d8This currency is invalid or is not allowed!'
+      Deposit:
+        Success:
+        - <! type:"titles:10:80:10" !>
+        - '#aefd5e&lSuccessful Deposit!'
+        - '#d4d9d8You deposit #aefd5e%amount%#d4d9d8 to shop bank!'
+        Error:
+          NotEnough:
+          - <! type:"titles:10:80:10" !>
+          - '#fd5e5e&lUnable to Deposit!'
+          - '#d4d9d8You don''t have enough funds!'
+      Withdraw:
+        Success:
+        - <! type:"titles:10:80:10" !>
+        - '#aefd5e&lSuccessful Withdraw!'
+        - '#d4d9d8You withdraw #aefd5e%amount%#d4d9d8 from shop bank!'
+        NotEnough:
+        - <! type:"titles:10:80:10" !>
+        - '#fd5e5e&lUnable to Withdraw!'
+        - '#d4d9d8Bank don''t have enough funds!'
+  Product:
+    Error:
+      BadItem: '#fd5e5e Detta  Artikel  burk  inte  vara  Begagnade  i  affär!'
+  Notification:
+    ShopEarnings:
+    - <! prefix:"false" !>
+    - '#ffeea2'
+    - '#fdba5e&lChest Shop Notification:'
+    - '#ffeea2Since your last online, your shops earned:'
+    - '#fdba5e▪ %amount%'
+    - '#ffeea2'
+  Search:
+    ItemPrompt:
+    - <! type:"titles:20:-1:20" sound:"BLOCK_LAVA_POP" !>
+    - '#ffeea2&lShop Search'
+    - '#d4d9d8Enter item #ffeea2name#d4d9d8 or #ffeea2material#d4d9d8 to search for.'
+  Editor:
+    Error:
+      ProductLeft: '#fd5e5e You  måste  ta  Allt  av  detta  produkt  från  de  bröst!'
+Auction:
+  Command:
+    Open:
+      Desc: Open auction.
+    Sell:
+      Desc: Add item on auction.
+      Usage: <price>
+      Error:
+        NoItem: '#fd5e5eYou must hold an item to do that!'
+    Expired:
+      Desc: List of expired listings.
+      Usage: '[player]'
+    History:
+      Desc: Your sales history.
+      Usage: '[player]'
+    Selling:
+      Desc: List of your current listings.
+      Usage: '[player]'
+    Unclaimed:
+      Desc: List of unclaimed rewards for your listings.
+      Usage: '[player]'
+  Listing:
+    Add:
+      Success:
+        Info: ' Lagt till    på  auktion  för   Beskatta  belopp: '
+        Announce: '&a%player_display_name% &7just put &ax%listing_item_amount% <?
+          show_item:"%listing_item_value%" ?>&a%listing_item_name%</> &7on auction
+          for &e%listing_price%&7!'
+      Error:
+        BadItem: <! sound:"ENTITY_VILLAGER_NO" !>&e%item% &ccan not be added on auction!
+        Limit: <! sound:"ENTITY_VILLAGER_NO" !>&cYou can not add more than &e%amount%
+          &cactive listings on auction!
+        Price:
+          Tax: '<! sound:"ENTITY_VILLAGER_NO" !>&cYou can''t afford the &e%tax%% &cprice
+            tax: &e%amount%&c!'
+          Currency:
+            Min: <! sound:"ENTITY_VILLAGER_NO" !>&cListing price for &e%currency_name%
+              currency&c can not be smaller than &e%amount%&c!
+            Max: <! sound:"ENTITY_VILLAGER_NO" !>&cListing price for &e%currency_name%
+              currency&c can not be greater than &e%amount%&c!
+          Negative: <! sound:"ENTITY_VILLAGER_NO" !>&cListing price can not be negative!
+          Material:
+            Min: <! sound:"ENTITY_VILLAGER_NO" !>&cListing price for &ex1 %item%&c
+              can not be smaller than &e%amount%&c!
+            Max: <! sound:"ENTITY_VILLAGER_NO" !>&cListing price for &ex1 %item%&c
+              can not be greater than &e%amount%&c!
+        DisabledGamemode: <! sound:"ENTITY_VILLAGER_NO" !>&cYou can't add items in
+          this game mode!
+    Buy:
+      Success:
+        Info:
+        - <! prefix:"false" type:"titles:20:50:20" sound:"ENTITY_PLAYER_LEVELUP" !>&a&lSuccessful
+          Purchase!
+        - '&7You bought &ax%listing_item_amount% %listing_item_name% &7from &a%listing_seller%
+          &7for &a%listing_price%&7!'
+      Error:
+        NotEnoughFunds:
+        - <! prefix:"false" type:"titles:20:50:20" sound:"BLOCK_ANVIL_PLACE" !>&c&lNot
+          Enough Funds!
+        - '&7Balance: &c%balance% &8| &7Needed: &c%listing_price%'
+  Notify:
+    Listing:
+      Unclaimed:
+      - <! prefix:"false" !>
+      - '&8&m-------------&8&l[ &e&lAuction Notification &8&l]&8&m-------------'
+      - '&7     You have &e%amount% unclaimed rewards&7 for your listings!'
+      - '&7                 <? show_text:"&7Click to claim rewards!" run_command:"/ah
+        unclaimed" ?>&a&lClick to Claim Now!</>'
+      - '&8&m-----------------------------------------'
+      Expired:
+      - ' <! prefix:"false" !>'
+      - '&8&m-------------&8&l[ &e&lAuction Notification &8&l]&8&m-------------'
+      - '&7     You have &e%amount% expired&7 listings!'
+      - '&7           <? show_text:"&7Click to return items!" run_command:"/ah expired"
+        ?>&a&lClick to Take Now!</>'
+      - '&8&m-----------------------------------------'
+      Claim: ' hävdade   för '
+  Error:
+    DisabledWorld: ' är  Inaktiverad  i  detta  värld!'
+AuctionSortType:
+  NAME: namn
+  MATERIAL: Material
+  SELLER: Säljare
+  NEWEST: Nyaste
+  OLDEST: Äldst
+  MOST_EXPENSIVE: Mest  Dyr
+  LEAST_EXPENSIVE: Minst  Dyr

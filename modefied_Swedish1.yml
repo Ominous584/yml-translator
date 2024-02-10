@@ -1,0 +1,18 @@
+info:
+  Same: '&cCan''t  öppen  din  egen  lager  för  redigering!'
+  cantLoginWithDifCap: '&cCan''t login with different name capitalization! Old name:
+    &7[oldName]&c. Current: &7[currentName]'
+  Searching: '&7Searching  för  spelare  data,  snälla du  vänta,  detta  burk  ta  några  tid  till  Avsluta!'
+  NoCommandWhileSleeping: '&cCan''t  prestera  kommandon  medan  sovande!'
+  PurgeNotEnabled: '&cPurge  fungera  är  inte  aktiverad  i  config  fil!'
+  TeamManagementDisabled: '&7This  funktion  kommer  ha  begränsad  funktionalitet  medan  DisableTeamManagement  är  uppsättning  till  Sann!'
+  NoGameMode: '&cPlease  använda sig av  0/1/2/3  eller  Överlevnad/Kreativt/Äventyr/Åskådare  eller  s/c/a/sp!'
+  vanishSymbolOn: '&8[&7H&8]&r'
+  vanishSymbolOff: ''
+  afkSymbolOn: '&8[&7Afk&8]&r'
+  afkSymbolOff: ''
+  beeinfo: '!actionbar!&7Honey level: &7[level]&7/&7[maxlevel] &7Bees inside: &7[count]&7/&7[maxcount]'
+  pvp:
+    noGodDamage: '!actionbar!&cYou  kan inte  skada  spelare  medan  varelse  odödlig'
+  pve:
+    noGodDamage: '!actionbar!&cYou  kan inte  skada  mobs  medan  varelse  odödlig'

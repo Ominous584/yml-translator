@@ -1,0 +1,127 @@
+info:
+  Same: '&cCan''t open your own inventory for editing!'
+  cantLoginWithDifCap: '&cCan''t login with different name capitalization! Old name:
+    &7[oldName]&c. Current: &7[currentName]'
+  Searching: '&7Searching for player data, please wait, this can take some time to
+    finish!'
+  NoCommandWhileSleeping: '&cCan''t perform commands while sleeping!'
+  PurgeNotEnabled: '&cPurge function is not enabled in config file!'
+  TeamManagementDisabled: '&7This feature will have limited functionalaty while DisableTeamManagement
+    is set to true!'
+  NoGameMode: '&cPlease use 0/1/2/3 or Survival/Creative/Adventure/Spectator or s/c/a/sp!'
+  NameChange: '#0085e6[playerDisplayName] &7logged in, also known as: #0085e6[namelist]'
+  Cooldowns: '&7This command is on cooldown for another #0085e6[time]'
+  specializedCooldowns: '&7Cooldown in motion for this command, please wait #0085e6[time]'
+  specializedRunning: '&7Command still running, please wait #0085e6[time]'
+  CooldownOneTime: '&7This command can only be used once!'
+  WarmUp:
+    canceled: '&7Command was cancelled due to your movement'
+    counter: '!actionbar!#0085e6--> Wait &7[time] #0085e6seconds <--'
+    DontMove: '!title!#0085e6Don''t move!!subtitle!&7Wait &c[time] &7seconds'
+    Boss:
+      DontMove: '&4Don''t move for &7[autoTimeLeft] &4seconds!'
+      WaitFor: '&4Wait for &7[autoTimeLeft] &4seconds!'
+  FailedSpawnerMine: '!actionbar!&cFailed to mine spawner. &7[percent]% &cdrop chance'
+  ClickSpawner: '!actionbar!&7[percent]% &7Drop chance'
+  Elevator:
+    created: '&7Created elevator sign'
+  CantPlaceSpawner: '&7Can''t place spawner so close to another spawner (#0085e6[range]&7)'
+  ChunksLoading: '&7World chunk data is still being loaded. Please wait a bit and
+    try again.'
+  CantUseNonEncrypted: '!actionbar!&cCommands on this item are not encrypted. Can''t
+    use them!'
+  CantUseTrident: '!actionbar!&cCan''t use trident with riptide enchant at this moment!'
+  CantDecode: '!actionbar!&cCan''t decode message/command. Key file contains wrong
+    key for this task. Inform server administration about this'
+  CantTeleport: '&7You can''t teleport because you have too many limited items. Scroll
+    over this line to see the maximum amount of items allowed.'
+  CantTeleportDistance: '&7Sorry you cant teleport over #0085e6[amount] &7blocks away!'
+  BlackList: '&7[material] [amount] #0085e6Max: [max]'
+  wrongPortal: '&cYou are in incorrect area of effect'
+  ItemWillBreak: '!actionbar!&7Your item (#0085e6[itemName]&7) will break soon! &7[current]#0085e6/&7[max]'
+  ArmorWillBreak: '!actionbar!&7Your [itemName] will break soon! &7[current]#0085e6/&7[max]'
+  flyingToHigh: '&cYou can''t fly so high, max height is #0085e6[max]&c!'
+  specializedItemFail: '&cCan''t determine specialized item requirement by value:
+    &7[value]'
+  sunSpeeding: Sleeping [count] of [total] [hour] hour [speed]X speed
+  sleepersRequired: '!actionbar!&f[sleeping] &7of &f[required] &7sleeping from required
+    for night time speedup'
+  sunSpeedingTitle: '&7[hour]'
+  skippingNight: '!title!&7Skipping entire night'
+  sunSpeedingSubTitle: '&f[count]&7/&f[total] &7(&f[speed]X&7)'
+  repairConfirm: '&7Click to confirm &7[items] &7item repair for &7[cost]'
+  bookDate: '&7Written at &f[date]'
+  maintenance: '&7Maintenance mode'
+  mapLimit: '&cCant go beyond 30 000 000 blocks'
+  startedEditingPainting: '&7You started editing painting. Click any other block to
+    cancel.'
+  canceledEditingPainting: '&7You canceled painting editing mode'
+  changedPainting: '!actionbar!&7Changed painting to #0085e6[name] &7with id of #0085e6[id]'
+  noSpam: '!title!&cNo spamming!'
+  noCmdSpam: '!title!&cNo command spamming!'
+  spamConsoleInform: '&cPlayer (&7[playerName]&c) triggered (&7[rules]&c) chat filter
+    with:&r [message]'
+  # This line can have extra variables: [totalUsers] [onlinePlayers]
+  FirstJoin: '&7[&d+&7] &7Välkommen! &a&l[playerDisplayName]&7. Ditt äventyr börja
+    nu!'
+  LogoutCustom: ' &7[&c-&7] &#cc3d3d[playerDisplayName] &7har lämnat spelet, återkallad
+    till Asgård!'
+  LoginCustom: ' &7[&a+&7] &a[playerDisplayName]&7, utvald av Odin, har anslutit till
+    striden!'
+  deathlocation: '&7Du dog på x:#0085e6[x]&7, y:#0085e6[y]&7, z:#0085e6[z]&7 i #0085e6[world]'
+  book:
+    exploit: '&cYou cant create book with more than [amount] pages'
+  combat:
+    CantUseShulkerBox: '&cCan''t use shulker box while you are in combat with player.
+      Wait: [time]'
+    CantUseCommand: '!actionbar!&cCan''t use command while in combat mode. Wait: [time]'
+    bossBarPvp: '&cCombat mode [autoTimeLeft]'
+    bossBarPve: '&2Combat mode [autoTimeLeft]'
+  noSchedule: '&cSchedule by this name is not found'
+  totem:
+    cooldown: '&7Totem cooldown: [time]'
+    warmup: '&7Totem effect: [time]'
+    cantConsume: '&7Totem usage was denied due to its cooldown time'
+  InventorySave:
+    info: '&8Info: &8[playerDisplayName]'
+    saved: '&7[time] &7Inventory saved with id: &7[id]'
+    NoSavedInv: '&7This player doesn''t have any saved inventories'
+    NoEntries: '&4File exists, but no inventories were found!'
+    CantFind: '&7Can''t find inventory with this id'
+    TopLine: '&7----------- #0085e6[playerDisplayName] saved inventory &7-----------'
+    List: '&7id: #0085e6[id]&7. #0085e6[time]'
+    KillerSymbol: '&c ☠'
+    Click: '&7Click to check ([id]) saved inventory'
+    IdDontExist: '&4This save Id doesn''t exist!'
+    Deleted: '&7Saved inventory was successfully deleted!'
+    Restored: '&7You have restored &7[sourcename] &7inventory for &7[targetname] &7user.'
+    GotRestored: '&7Your inventory was restored from &7[sourcename] &7saved inventory
+      on &7[time]'
+    LoadForSelf: '&7Load this inventory for your self'
+    LoadForOwner: '&7Load this inventory for owner'
+    NextInventory: '&7Next inventory'
+    PreviousInventory: '&7Previous inventory'
+    Editable: '&7Edit mode enabled'
+    NonEditable: '&7Edit mode disabled'
+  vanishSymbolOn: '&8[&7H&8]&r'
+  vanishSymbolOff: ''
+  afkSymbolOn: '&8[&7Afk&8]&r'
+  afkSymbolOff: ''
+  beeinfo: '!actionbar!&7Honey level: &7[level]&7/&7[maxlevel] &7Bees inside: &7[count]&7/&7[maxcount]'
+  pvp:
+    noGodDamage: '!actionbar!&cYou can''t damage players while being immortal'
+  pve:
+    noGodDamage: '!actionbar!&cYou can''t damage mobs while being immortal'
+  InvEmpty:
+    armor: '&7Your armor slots should be empty!'
+    hand: '&7Your hand should be empty!'
+    maininv: '&7Your main inventory should be empty!'
+    maininvslots: '&7Your main inventory should have atleast #0085e6[count] &7empty
+      slots!'
+    inv: '&7Your inventory should be empty!'
+    offhand: '&7Your offhand should be empty!'
+    quickbar: '&7Your quick bar should be empty!'
+    quickbarslots: '&7Your quick bar should have atleast #0085e6[count] &7empty slots!'
+    subinv: '&7Your sub inventory should be empty!'
+    subinvslots: '&7Your sub inventory should have atleast #0085e6[count] &7empty
+      slots!'
